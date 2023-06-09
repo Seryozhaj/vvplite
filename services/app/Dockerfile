@@ -1,4 +1,4 @@
-FROM php:8.0.2-fpm@sha256:b9adc59273171d12e243e4185d83cbdb78eb7a826b9f7f6c1ce82403fd656b97 as base
+FROM php:8.0.2-fpm@sha256:f356524c48733c966904ef74c37efe7adac252f19bd11b4e90b48d11aeb8974d as base
 
 LABEL maintainer="Aparg"
 
@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
     telnet \
     ffmpeg
 
-RUN curl -sL https://deb.nodesource.com/setup_12.x > /tmp/setup.sh && \
+RUN curl -sL https://deb.nodesource.com/setup_16.x > /tmp/setup.sh && \
     chmod +x /tmp/setup.sh && /tmp/setup.sh && \
     apt -y install nodejs && \
     npm install -g yarn @quasar/cli
