@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.16
 
 LABEL maintainer="Aparg"
 
@@ -9,8 +9,8 @@ COPY /src/resources/js/quasar /var/www
 
 
 ENV ALPINE_MIRROR "http://dl-cdn.alpinelinux.org/alpine"
-RUN echo "${ALPINE_MIRROR}/v3.11/main/" >> /etc/apk/repositories
-RUN apk add nodejs npm --repository="${ALPINE_MIRROR}/v3.11/main/"
+RUN echo "${ALPINE_MIRROR}/v3.16/main/" >> /etc/apk/repositories
+RUN apk add nodejs npm --repository="${ALPINE_MIRROR}/v3.16/main/"
 
 RUN npm install -g yarn @quasar/cli
 
